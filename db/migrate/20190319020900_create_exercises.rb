@@ -1,10 +1,10 @@
 class CreateExercises < ActiveRecord::Migration
   def change
     create_table :exercises do |t|
-      t.string :reps
-      t.string :weight
+      t.integer :reps
+      t.integer :weight
       t.string :day
-      t.string :workout_id
+      t.integer :workout_id
 
       t.timestamps null: false
     end

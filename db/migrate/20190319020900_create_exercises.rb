@@ -5,7 +5,6 @@ class CreateExercises < ActiveRecord::Migration
       t.integer :weight
       t.string :day
       t.integer :workout_id
-
       t.timestamps null: false
     end
   end

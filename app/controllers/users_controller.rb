@@ -10,7 +10,7 @@ post '/users/signup' do
     session[:user_id] = user.id
     redirect "/workouts"
   else
-    redirect '/signup'
+    redirect '/users/signup'
   end
 end
 

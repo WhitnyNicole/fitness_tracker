@@ -13,4 +13,13 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
+
+  helpers do
+
+    def is_logged_in?
+     !!session[:user_id]
+   end
+
+  end
+
 end

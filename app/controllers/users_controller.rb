@@ -8,11 +8,21 @@ post '/users/signup' do
   user = User.new(params)
   if user.save
     session[:user_id] = user.id
-    redirect "/workouts"
+    redirect "/workouts/show"
   else
     redirect '/users/signup'
   end
 end
+
+get '/users/login' do
+   "you are logged in"
+   if is_logged_in?
+     redirect '/workouts/show'
+   else
+     "Please log into your account"
+     erb :'/users/login.html'
+   end
+ end
 
   # POST: /users
   post "/users" do

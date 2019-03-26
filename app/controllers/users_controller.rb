@@ -24,6 +24,15 @@ get '/users/login' do
    end
  end
 
+
+ post '/users/login' do
+   user = User.find_by(:username => params[:username])
+   if user && user.authenticate(params[:password])
+       session[:user_id] = user.id
+   end
+       redirect to '/workouts/show'
+ end
+
   # POST: /users
   post "/users" do
     user = User.new(params)

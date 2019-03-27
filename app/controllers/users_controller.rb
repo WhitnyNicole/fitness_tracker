@@ -5,10 +5,12 @@ get '/users/signup' do
 end
 
 post '/users/signup' do
+  binding.pry
   user = User.new(params)
   if user.save
     session[:user_id] = user.id
-    redirect "/workouts/show"
+    redirect "/workouts"
+    # redirect "/users/#{user.id}"
   else
     redirect '/users/signup'
   end
